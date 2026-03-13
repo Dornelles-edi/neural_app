@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 # CONFIGURAÇÃO DA PÁGINA
 # ==========================================
 st.set_page_config(
-    page_title="IA de Materiais - Previsão de Propriedades",
+    page_title="Rede Neural - Previsão de Propriedades Mecanicas PLA",
     page_icon="🔬",
     layout="wide"
 )
@@ -63,17 +63,17 @@ st.sidebar.header("🔬 Parâmetros de Processo")
 st.sidebar.write("Ajuste os valores para prever as propriedades:")
 
 # Valores baseados nos limites do seu dataset (ajuste se necessário)
-temp = st.sidebar.slider("Temperatura (°C)", min_value=180.0, max_value=220.0, value=200.0, step=0.1)
+temp = st.sidebar.slider("Temperatura (°C)", min_value=180.0, max_value=240.0, value=200.0, step=0.1)
 espessura = st.sidebar.slider("Espessura (mm)", min_value=0.05, max_value=0.6, value=0.3, step=0.01)
 velocidade = st.sidebar.slider("Velocidade (m/min)", min_value=20.0, max_value=60.0, value=40.0, step=0.5)
 
 st.sidebar.markdown("---")
-st.sidebar.info("Este app utiliza uma Rede Neural MLP treinada com dados experimentais consolidados.")
+st.sidebar.info("Este app utiliza uma Rede Neural MLP treinada com dados experimentais.")
 
 # ==========================================
 # ÁREA PRINCIPAL - PREVISÃO E VISUALIZAÇÃO
 # ==========================================
-st.title("🔬 Previsão de Propriedades de Materiais via IA")
+st.title("Previsão de Propriedades de Materiais de Impressão 3D via rede neural")
 st.write("Ajuste os parâmetros na barra lateral para ver a previsão instantânea das propriedades mecânicas.")
 
 if model is not None:
